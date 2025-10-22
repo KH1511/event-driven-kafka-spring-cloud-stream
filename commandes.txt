@@ -1,8 +1,13 @@
-***Starting the consumer for receiving messages in the topic : T1
-docker exec --interactive --tty ccn-kafla-broker kafka-console-consumer --bootstrap-server broker:9092 --topic T1
+Command List
 
-****Starting consumer and receiving all messages
-docker exec --interactive --tty ccn-kafla-broker kafka-console-consumer --bootstrap-server broker:9092 --topic T1 --from-beginning
+1️⃣ Starting the consumer for receiving messages from the topic T1
+This command launches the Kafka consumer inside the Docker container named ccn-kafka-broker.
+It connects to the broker running on port 9092 and listens for incoming messages on the topic T1.
 
-****Start Producer
-docker exec --interactive --tty ccn-kafla-broker kafka-console-producer --bootstrap-server broker:9092 --topic T1
+2️⃣ Starting the consumer and receiving all messages from the beginning
+This version of the consumer command retrieves all messages, including those sent before the consumer was started.
+It uses the same configuration but adds the --from-beginning option to replay the entire topic history.
+
+3️⃣ Starting the producer
+This command starts the Kafka producer inside the ccn-kafka-broker container.
+It allows the user to send new messages to the topic T1 through the Kafka broker on port 9092.
