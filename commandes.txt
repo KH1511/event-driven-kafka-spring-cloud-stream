@@ -1,0 +1,8 @@
+***Starting the consumer for receiving messages in the topic : T1
+docker exec --interactive --tty ccn-kafla-broker kafka-console-consumer --bootstrap-server broker:9092 --topic T1
+
+****Starting consumer and receiving all messages
+docker exec --interactive --tty ccn-kafla-broker kafka-console-consumer --bootstrap-server broker:9092 --topic T1 --from-beginning
+
+****Start Producer
+docker exec --interactive --tty ccn-kafla-broker kafka-console-producer --bootstrap-server broker:9092 --topic T1
